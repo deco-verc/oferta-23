@@ -1,0 +1,90 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary-white: #ffffff;
+  --secondary-cream: #fdf6f5;
+  --secondary-cream-alt: #faf2f0;
+  --pine-green: #0f5132;
+  --pine-green-dark: #114b2f;
+  --crimson-red: #d31a2b;
+  --crimson-red-dark: #c8102e;
+  --crimson-red-hover: #b01221;
+  --check-green: #1e8e3e;
+  --check-green-bg: #e6f4ea;
+  --mint-bg: #f2f8f5;
+  --mint-border: #d8ece1;
+  --border-soft: #f0e4e2;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-family: var(--font-jakarta), system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  background-color: #eef2f6;
+  color: #1f2937;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+/* Custom Scrollbar for Horizontal Carousels */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Soft pulse animation for CTA button */
+@keyframes cta-pulse {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 4px 14px rgba(211, 26, 43, 0.35);
+  }
+  50% {
+    transform: scale(1.02);
+    box-shadow: 0 8px 22px rgba(211, 26, 43, 0.45);
+  }
+}
+
+.animate-cta-subtle {
+  animation: cta-pulse 3s infinite ease-in-out;
+}
+
+/* Modal scale animation */
+@keyframes modal-scale {
+  0% {
+    opacity: 0;
+    transform: scale(0.92) translateY(8px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.animate-modal-scale {
+  animation: modal-scale 0.22s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Green CTA pulse animation for upsell button */
+@keyframes pulse-green {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 4px 14px rgba(22, 163, 74, 0.35);
+  }
+  50% {
+    transform: scale(1.02);
+    box-shadow: 0 8px 22px rgba(22, 163, 74, 0.55);
+  }
+}
+
+.animate-pulse-green {
+  animation: pulse-green 2.5s infinite ease-in-out;
+}
